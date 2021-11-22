@@ -31,8 +31,8 @@ help:
 
 all: deps
 
-deps:
-	cd $(SWIFTNAV_ROOT)/tasks && bash setup.sh && cd $(SWIFTNAV_ROOT)
+# deps:
+# 	cd $(SWIFTNAV_ROOT)/tasks && bash setup.sh && cd $(SWIFTNAV_ROOT)
 
 .conda_py36:
 	conda create -p $(PWD)/.conda_py36 python=3.6 --yes
