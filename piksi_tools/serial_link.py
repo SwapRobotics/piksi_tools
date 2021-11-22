@@ -30,8 +30,8 @@ from sbp.client.loggers.null_logger import NullLogger
 from sbp.logging import SBP_MSG_LOG, SBP_MSG_PRINT_DEP, MsgLog
 from sbp.piksi import MsgReset
 
-from piksi_tools.utils import mkdir_p, get_tcp_driver, call_repeatedly
-from piksi_tools import __version__ as VERSION
+from utils import mkdir_p, get_tcp_driver, call_repeatedly
+# from piksi_tools import __version__ as VERSION
 
 SERIAL_PORT = "/dev/ttyUSB0"
 SERIAL_BAUD = 115200
@@ -58,7 +58,7 @@ def base_cl_options(override_arg_parse=None, add_help=True,
     else:
         parserclass = argparse.ArgumentParser
     parser = parserclass(
-        description="Swift Navigation SBP Client version " + VERSION, add_help=add_help)
+        description="Swift Navigation SBP Client version " , add_help=add_help)
     parser.add_argument(
         "-p", "--port", default=None, help="specify the serial port to use.")
     parser.add_argument(

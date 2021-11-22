@@ -52,8 +52,8 @@ from sbp.settings import (
     MsgSettingsReadByIndexReq, MsgSettingsReadReq,
     MsgSettingsSave, MsgSettingsWrite)
 
-from piksi_tools import serial_link
-from piksi_tools import __version__ as VERSION
+import serial_link
+# from piksi_tools import __version__ as VERSION
 
 DEFAULT_READ_RETRIES = 5
 DEFAULT_CONFIRM_RETRIES = 2
@@ -316,7 +316,7 @@ def get_args(args=None):
     """
     import argparse
     parser = serial_link.base_cl_options()
-    parser.description = 'Piksi Settings Tool version ' + VERSION
+    parser.description = 'Piksi Settings Tool version '
     parser.formatter_class = argparse.RawDescriptionHelpFormatter
     parser.epilog = ("Returns:\n"
                      "  0: Upon success\n"
