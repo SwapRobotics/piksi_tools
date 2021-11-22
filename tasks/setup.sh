@@ -116,7 +116,7 @@ function all_dependencies_debian () {
          libqt4-scripttools \
          libffi-dev \
          libssl-dev \
-         python-software-properties
+         software-properties-common
     if ! bionic_like; then
         run_apt_install python-vtk
     else
