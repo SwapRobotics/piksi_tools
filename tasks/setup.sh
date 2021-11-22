@@ -100,7 +100,7 @@ function validate_linux_mint19() {
 
 function run_apt_install() {
     export DEBIAN_FRONTEND=noninteractive
-    sudo -H -E apt-get install -y --force-yes $*
+    sudo -H -E apt-get install -y  $*
 }
 
 function run_pip3_install() {
