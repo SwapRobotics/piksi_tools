@@ -332,8 +332,10 @@ def run(args, link, stop_function=lambda: None):
 
 def get_base_args_driver(args):
     driver = None
-    if getattr(args, 'tcp', None):
-        driver = get_tcp_driver(getattr(args, 'port', None))
+    # if getattr(args, 'tcp', None):
+        # driver = get_tcp_driver(getattr(args, 'port', None))
+    if True:
+        driver = get_tcp_driver("55555")
     else:
         driver_kwargs = {}
         # unpack relevant args

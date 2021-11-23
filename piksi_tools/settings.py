@@ -392,6 +392,7 @@ def main(args=None):
             if command.startswith("write") and args.save_after_write:
                 print("Saving Settings to Flash.")
                 settings.save()
+    print(settings.read_all(verbose=True))
 
 
 if __name__ == "__main__":
