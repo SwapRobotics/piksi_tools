@@ -104,7 +104,8 @@ function run_apt_install() {
 }
 
 function run_pip3_install() {
-    python3.6 -m pip install --ignore-installed $*
+    # python3.6 -m pip install --ignore-installed $*
+    sudo apt install python3-pip
 }
 
 function all_dependencies_debian () {
