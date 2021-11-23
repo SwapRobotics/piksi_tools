@@ -316,7 +316,7 @@ def get_args(args=None):
     Get and parse arguments.
     """
     import argparse
-    parser = serial_link.base_cl_options()
+    parser = base_cl_options()
     parser.description = 'Piksi Settings Tool version '
     parser.formatter_class = argparse.RawDescriptionHelpFormatter
     parser.epilog = ("Returns:\n"
@@ -370,7 +370,7 @@ def main(args=None):
     """
     args = get_args(args)
     command = args.command
-    driver = serial_link.get_base_args_driver(args)
+    driver = get_base_args_driver(args)
     with Handler(Framer(driver.read, driver.write, verbose=args.verbose)) as link:
         settings = Settings(link, timeout=args.timeout)
         with settings:
