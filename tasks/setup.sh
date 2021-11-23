@@ -100,7 +100,7 @@ function validate_linux_mint19() {
 
 function run_apt_install() {
     export DEBIAN_FRONTEND=noninteractive
-    sudo -H -E apt-get install -y --force-yes $*
+    sudo -H -E apt-get install -y $*
 }
 
 function run_pip3_install() {
@@ -116,7 +116,7 @@ function all_dependencies_debian () {
          libqt4-scripttools \
          libffi-dev \
          libssl-dev \
-         python-software-properties
+         software-properties-common
     if ! bionic_like; then
         run_apt_install python-vtk
     else
