@@ -389,7 +389,7 @@ def main(args=None):
             elif command == 'write_from_file':
                 settings.write_from_file(args.filename, verbose=args.verbose)
             # If saving was requested, we have done a write command, and the write was requested, we save
-            if command.startswith("write") and args.save_after_write:
+            if str(command)[:5] == ("write") and args.save_after_write:
                 print("Saving Settings to Flash.")
                 settings.save()
     print(settings.read_all(verbose=True))
