@@ -51,12 +51,12 @@ class Diagnostics(object):
         self.handshake_received = False
         self.sbp_version = (0, 0)
         self.link = link
-        self.link.add_callback(self._settings_callback,
-                               SBP_MSG_SETTINGS_READ_BY_INDEX_REQ)
-        self.link.add_callback(self._settings_callback,
-                               SBP_MSG_SETTINGS_READ_BY_INDEX_RESP)
-        self.link.add_callback(self._settings_done_callback,
-                               SBP_MSG_SETTINGS_READ_BY_INDEX_DONE)
+        #self.link.add_callback(self._settings_callback,
+        #                       SBP_MSG_SETTINGS_READ_BY_INDEX_REQ)
+        #self.link.add_callback(self._settings_callback,
+        #                       SBP_MSG_SETTINGS_READ_BY_INDEX_RESP)
+        #self.link.add_callback(self._settings_done_callback,
+        #                       SBP_MSG_SETTINGS_READ_BY_INDEX_DONE)
         self.link.add_callback(self._heartbeat_callback, SBP_MSG_HEARTBEAT)
         self.link.add_callback(self._deprecated_handshake_callback,
                                SBP_MSG_BOOTLOADER_HANDSHAKE_DEP_A)
