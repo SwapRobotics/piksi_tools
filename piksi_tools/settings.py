@@ -241,7 +241,14 @@ class Settings(object):
             parser.read_file(f)
         for section, settings in parser.items():
             for setting, value in settings.items():
-                self.write(section, setting, value, verbose=verbose)
+                if settings == "interface_mode":
+                    self.write(section, setting, "Config", verbose=verbose)
+                elif section == "ntrip" and settings == "enable":
+                    self.write(section, settings, "False", verbose=verbose)
+                else:
+                    self.write(section, setting, value, verbose=verbose)
+        self.write("ethernet", "interface_mode", "Active", verbose=verbose)
+        self.write("ntrip", "enable", "True", verbose=verbose)
         return
 
     def _print_callback(self, msg, **metadata):
@@ -392,7 +399,6 @@ def main(args=None):
             if str(command)[:5] == ("write") and args.save_after_write:
                 print("Saving Settings to Flash.")
                 settings.save()
-    print(settings.read_all(verbose=True))
 
 
 if __name__ == "__main__":

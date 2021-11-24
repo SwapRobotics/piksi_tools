@@ -33,7 +33,7 @@ from sbp.piksi import MsgReset
 from utils import mkdir_p, get_tcp_driver, call_repeatedly
 # from piksi_tools import __version__ as VERSION
 
-SERIAL_PORT = "/dev/ttyUSB0"
+SERIAL_PORT = "COM12"
 SERIAL_BAUD = 115200
 
 
@@ -332,10 +332,10 @@ def run(args, link, stop_function=lambda: None):
 
 def get_base_args_driver(args):
     driver = None
-    # if getattr(args, 'tcp', None):
-        # driver = get_tcp_driver(getattr(args, 'port', None))
-    if True:
-        driver = get_tcp_driver("55555")
+    if getattr(args, 'tcp', None):
+        driver = get_tcp_driver(getattr(args, 'port', None))
+    # if True:
+    #     driver = get_tcp_driver("55555")
     else:
         driver_kwargs = {}
         # unpack relevant args
