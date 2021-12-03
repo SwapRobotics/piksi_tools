@@ -53,8 +53,6 @@ def get_tcp_driver(host, port=None):
     '''
     try:
         if port is None:
-            # Permenantly set to default host
-            host = "192.168.0.223:55555"
             host, port = host.split(':')
         return TCPDriver(host,
                          int(port),
