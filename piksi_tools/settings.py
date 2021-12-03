@@ -324,7 +324,7 @@ def get_args(args=None):
     """
     import argparse
     parser = base_cl_options()
-    parser.description = 'Piksi Settings Tool version '
+    parser.description = 'Piksi Settings Tool version ' + VERSION
     parser.formatter_class = argparse.RawDescriptionHelpFormatter
     parser.epilog = ("Returns:\n"
                      "  0: Upon success\n"
