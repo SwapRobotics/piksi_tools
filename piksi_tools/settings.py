@@ -52,8 +52,8 @@ from sbp.settings import (
     MsgSettingsReadByIndexReq, MsgSettingsReadReq,
     MsgSettingsSave, MsgSettingsWrite)
 
-from serial_link import base_cl_options
-from serial_link import get_base_args_driver
+from piksi_tools.serial_link import base_cl_options
+from piksi_tools.serial_link import get_base_args_driver
 # from piksi_tools import __version__ as VERSION
 
 DEFAULT_READ_RETRIES = 5
