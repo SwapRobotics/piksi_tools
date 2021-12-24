@@ -1,4 +1,4 @@
-NOte:
+Note:
 
 This is a special branch with edits on the programs that could make it work sicne some codes are deprecated. Most programs should work fine now.
 
